@@ -1,4 +1,4 @@
 /node_modules
-built.js
-server.js
+./built.js
+./server.js
 /assets
