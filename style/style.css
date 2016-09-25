@@ -1,0 +1,122 @@
+body .app-container{
+	margin: 0;
+	padding: 0;
+}
+
+.app-container #home-banner{
+	height: 45vh;
+    display: inline-block;
+    background-color: #006064;
+    width: 100%;
+    position: relative;
+    box-shadow: 0px 0px 6px #383838;
+}
+
+#home-banner .btn{
+	background-color: rgba(255,255,255,0.2);
+    margin: 1em;
+    color: rgba(255,255,255,0.8);
+    transition: 0.25s;
+}
+
+#home-banner .btn:hover{
+	background-color: rgba(255,255,255,0.4);
+	color: rgba(255,255,255,0.9);
+	transition: 0.25s;
+}
+
+.profile-pic-container .profile-pic{
+	background: url("../assets/kevin.jpg") no-repeat center;
+	display: inline-block;
+	width: 25vh;
+	height: 25vh;
+	background-size: cover;
+	border-radius: 50%;
+	box-shadow: 0px 0px 8px #383838;
+}
+
+.profile-pic-container{
+	width: 100%;
+	text-align: center;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-me{
+	display: inline-block;
+	max-width: 310px;
+    text-align: center;
+    margin-left: 7em;
+    color: #f2dede;
+}
+
+.about-me ul{
+	text-align: left;
+}
+
+.project-btn{
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+	border: none;
+	box-shadow: 0px 0px 12px #383838;
+	position: absolute;
+    bottom: -40px;
+    right: 10vw;
+    transition: 0.4s;
+}
+
+.project-btn:hover{
+	background-color: rgba(255,255,255,0.2);
+}
+
+
+/* Blog Preview */
+.blog-preview-container{
+	text-align: center
+}
+.section-title{
+	text-align: center;
+}
+.blog-preview-item-container{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.blog-preview-item-container .blog-preview-item{
+    width: 20vw;
+    height: 20vw;
+    background-color: white;
+    display: inline-block;
+    margin: 3vw 2px;
+    border: 1px solid #ddd;
+    transition: 0.2s;
+}
+.blog-preview-container .btn{
+	display: block;
+}
+.blog-preview-bottom-border{
+	width: 75%;
+	height: 1px;
+	border-bottom: 2px solid black;
+	display: inline-block;
+}
+
+/* Projects Preview */
+.projects-container{
+	text-align: center;
+}
+.project-item-container{
+	width: 100vw;
+	text-align: center;
+}
+
+.project-item{
+	width: 70vw;
+	height: 30vw;
+	display: inline-block;
+	background-color: green;
+	display: inline-block;
+	transition: 0.2s;
+}
