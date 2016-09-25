@@ -7,8 +7,8 @@ module.exports = {
 	]
 	,
 	output:{
-		// path: "./",
-		// publicPath: "/",
+		path: __dirname + "/built",
+		// publicPath: __dirname + "/built",
 		filename: 'built.js'
 	},
 	module: {
