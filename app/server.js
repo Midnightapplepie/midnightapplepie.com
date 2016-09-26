@@ -1,7 +1,7 @@
 import express from 'express'
 import React from 'react'
 import { RouterContext, match } from 'react-router';
-import createLocation from 'react-router/node_modules/history/lib/createLocation';
+import createLocation from 'history/lib/createLocation';
 import { renderToString } from 'react-dom/server';
 import routes from './routes';
 import App from '../containers/app';
@@ -15,9 +15,9 @@ server.use(express.static(path.resolve(__dirname + '/../built')));
 server.use(express.static(path.resolve(__dirname + '/../style')));
 
 function layout(html, preloadedState){
-  var mainCss =  `<link rel="stylesheet" href="../style/style.css">`;
+  var mainCss =  `<link rel="stylesheet" href="./style/style.css">`;
   var bootStrap = `<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">`;
-  var reactScript = `<script src="../built/built.js"></script>`
+  var reactScript = `<script src="./built/built.js"></script>`
   
   return `
     <!DOCTYPE html>
