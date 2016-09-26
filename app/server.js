@@ -1,7 +1,7 @@
 import express from 'express'
 import React from 'react'
 import { RouterContext, match } from 'react-router';
-import createLocation from 'history/lib/createLocation';
+import createLocation from 'react-router/node_modules/history/lib/createLocation';
 import { renderToString } from 'react-dom/server';
 import routes from './routes';
 import App from '../containers/app';
