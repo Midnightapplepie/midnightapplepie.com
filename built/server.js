@@ -63,26 +63,23 @@
 
 	var _reactRouter = __webpack_require__(4);
 
-	var _createLocation = __webpack_require__(5);
+	var _server = __webpack_require__(5);
 
-	var _createLocation2 = _interopRequireDefault(_createLocation);
-
-	var _server = __webpack_require__(6);
-
-	var _routes = __webpack_require__(7);
+	var _routes = __webpack_require__(6);
 
 	var _routes2 = _interopRequireDefault(_routes);
 
-	var _app = __webpack_require__(8);
+	var _app = __webpack_require__(7);
 
 	var _app2 = _interopRequireDefault(_app);
 
-	var _path = __webpack_require__(16);
+	var _path = __webpack_require__(15);
 
 	var _path2 = _interopRequireDefault(_path);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	// import createLocation from 'history/lib/createLocation';
 	var server = (0, _express2.default)();
 
 	server.use(_express2.default.static(_path2.default.resolve(__dirname + '/../assets')));
@@ -90,9 +87,9 @@
 	server.use(_express2.default.static(_path2.default.resolve(__dirname + '/../style')));
 
 	function layout(html, preloadedState) {
-	  var mainCss = '<link rel="stylesheet" href="../style/style.css">';
+	  var mainCss = '<link rel="stylesheet" href="./style/style.css">';
 	  var bootStrap = '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">';
-	  var reactScript = '<script src="../built/built.js"></script>';
+	  var reactScript = '<script src="./built/built.js"></script>';
 
 	  return '\n    <!DOCTYPE html>\n    <html>\n        <head>\n          ' + mainCss + '\n        ' + bootStrap + '\n        </head>\n      <body>\n          <div class="app-container">' + html + '</div>\n          ' + reactScript + '\n        </body>\n    </html>';
 	}
@@ -146,16 +143,10 @@
 /* 5 */
 /***/ function(module, exports) {
 
-	module.exports = require("history/lib/createLocation");
-
-/***/ },
-/* 6 */
-/***/ function(module, exports) {
-
 	module.exports = require("react-dom/server");
 
 /***/ },
-/* 7 */
+/* 6 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -170,15 +161,15 @@
 
 	var _reactRouter = __webpack_require__(4);
 
-	var _app = __webpack_require__(8);
+	var _app = __webpack_require__(7);
 
 	var _app2 = _interopRequireDefault(_app);
 
-	var _home = __webpack_require__(9);
+	var _home = __webpack_require__(8);
 
 	var _home2 = _interopRequireDefault(_home);
 
-	var _resume = __webpack_require__(15);
+	var _resume = __webpack_require__(14);
 
 	var _resume2 = _interopRequireDefault(_resume);
 
@@ -192,7 +183,7 @@
 	); // import 'babel-register';
 
 /***/ },
-/* 8 */
+/* 7 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -241,7 +232,7 @@
 	exports.default = App;
 
 /***/ },
-/* 9 */
+/* 8 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -256,17 +247,17 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _reactRedux = __webpack_require__(10);
+	var _reactRedux = __webpack_require__(9);
 
-	var _banner = __webpack_require__(11);
+	var _banner = __webpack_require__(10);
 
 	var _banner2 = _interopRequireDefault(_banner);
 
-	var _blogPreview = __webpack_require__(13);
+	var _blogPreview = __webpack_require__(12);
 
 	var _blogPreview2 = _interopRequireDefault(_blogPreview);
 
-	var _projects = __webpack_require__(14);
+	var _projects = __webpack_require__(13);
 
 	var _projects2 = _interopRequireDefault(_projects);
 
@@ -306,13 +297,13 @@
 	exports.default = Home;
 
 /***/ },
-/* 10 */
+/* 9 */
 /***/ function(module, exports) {
 
 	module.exports = require("react-redux");
 
 /***/ },
-/* 11 */
+/* 10 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -327,7 +318,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _topNav = __webpack_require__(12);
+	var _topNav = __webpack_require__(11);
 
 	var _topNav2 = _interopRequireDefault(_topNav);
 
@@ -424,7 +415,7 @@
 	exports.default = Banner;
 
 /***/ },
-/* 12 */
+/* 11 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -495,7 +486,7 @@
 	exports.default = TopNav;
 
 /***/ },
-/* 13 */
+/* 12 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -577,7 +568,7 @@
 	exports.default = BlogPreview;
 
 /***/ },
-/* 14 */
+/* 13 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -637,7 +628,7 @@
 	exports.default = Projects;
 
 /***/ },
-/* 15 */
+/* 14 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -652,7 +643,7 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
-	var _topNav = __webpack_require__(12);
+	var _topNav = __webpack_require__(11);
 
 	var _topNav2 = _interopRequireDefault(_topNav);
 
@@ -700,7 +691,7 @@
 	exports.default = Resume;
 
 /***/ },
-/* 16 */
+/* 15 */
 /***/ function(module, exports) {
 
 	module.exports = require("path");
