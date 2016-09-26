@@ -2,6 +2,11 @@ import React, {Component} from 'react';
 import TopNav from './top-nav';
 
 class Banner extends Component {
+	projectBtnHandler(){
+		var projects = document.querySelector("#projects");
+		projects.scrollIntoView({block:"start",behavior:"smooth"});
+	}
+
 	render(){
 
 		return(
@@ -20,7 +25,11 @@ class Banner extends Component {
 						</ul>
 					</div>
 				</div>
-				<div className="project-btn">Projects</div>
+				<div 
+					href="#projects" 
+					className="project-btn"
+					onClick = {this.projectBtnHandler}
+					>Projects</div>
 			</div> 
 		);
 	}
