@@ -20,7 +20,7 @@ class Banner extends Component {
 						</ul>
 					</div>
 				</div>
-				<button className="project-btn">Projects</button>
+				<div className="project-btn">Projects</div>
 			</div> 
 		);
 	}

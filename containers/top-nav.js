@@ -5,17 +5,17 @@ class TopNav extends Component{
 	render(){
 		return(
 			<div className="top-nav">
-				<button 
+				<Link 
 					className="btn"
-					type="button">Home
-				</button>
+					to="/">Home
+				</Link>
 				<Link 
 					className="btn"
 					to="/resume">resume</Link>
-				<button 
+				<a 
 					className="btn"
-					type="button">LinkedIn
-				</button>
+					href="https://www.linkedin.com/in/kevxjia" target="_blank">LinkedIn
+				</a>
 			</div>
 		);
 	}

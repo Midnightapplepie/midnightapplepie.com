@@ -4,11 +4,11 @@ class Projects extends Component{
 	render(){
 		return(
 			<div className="projects-container">
-				<h1 className="section-title">Portfolio</h1>
+				<h1 className="section-title">Projects</h1>
 				<div className="project-item-container">	
-					<div className="project-item"></div>
-					<div className="project-item"></div>
-					<div className="project-item"></div>
+					<a className="project-item" id="pj-1" target="_blank" href="http://www.xiaoloong.com/"></a>
+					<a className="project-item" id="pj-2" target="_blank" href="https://mid9blog.herokuapp.com/"></a>
+					<a className="project-item" id="pj-3" target="_blank" href="http://midnightapplepie.github.io/projects/canvas.html"></a>
 				</div>
 			</div>
 		);

@@ -4,16 +4,21 @@ class BlogPreview extends Component{
 	render(){
 		return (
 			<div className="blog-preview-container">
-				<h1 className="section-title">Blog</h1>
+				<h1 className="section-title">What Happened...</h1>
 				<div className="blog-preview-item-container">
 					<div className="blog-preview-item">
+						<img src="./assets/sam_1.jpg" />
 					</div>
 					<div className="blog-preview-item">
+						<img src="./assets/sam_2.jpg" />
 					</div>
 					<div className="blog-preview-item">
+						<img src="./assets/sam_3.jpg" />
 					</div>
 				</div>
-				<button className="btn"> More... </button>
+				<div className="row">
+					<button className="btn"> Under Construction ... </button>
+				</div>
 				<div className="blog-preview-bottom-border"></div>
 			</div>
 		);
