@@ -7,8 +7,7 @@ module.exports = {
 	]
 	,
 	output:{
-		path: __dirname + "/built",
-		// publicPath: __dirname + "/built",
+		path: path.resolve(__dirname + "/built"),
 		filename: 'built.js'
 	},
 	module: {
@@ -23,6 +22,9 @@ module.exports = {
 			}
 		]
 	},
+	devServer: {
+        contentBase: "./build",
+    }
 	// devServer: {
 	// 	port: 8000
 	// }

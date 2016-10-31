@@ -11,11 +11,14 @@ class TopNav extends Component{
 				</Link>
 				<Link 
 					className="btn"
-					to="/resume">resume</Link>
+					to="/resume">Resume</Link>
 				<a 
 					className="btn"
 					href="https://www.linkedin.com/in/kevxjia" target="_blank">LinkedIn
 				</a>
+				<Link
+					className="btn"
+					to="new-post">New Post</Link>
 			</div>
 		);
 	}

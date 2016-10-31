@@ -208,16 +208,19 @@ body .app-container{
 	filter: brightness(1);
 
 }
-
 #pj-1{
-	background-image: url("../assets/xiao_loong.png");
+	background-image: url("../assets/slackershub.png");
 }
 
 #pj-2{
-	background-image: url("../assets/tumblr.png");
+	background-image: url("../assets/xiao_loong.png");
 }
 
 #pj-3{
+	background-image: url("../assets/tumblr.png");
+}
+
+#pj-4{
 	background-image: url("../assets/canvas.png");
 }
 
@@ -238,4 +241,21 @@ body .app-container{
 #resume-page-container h1{
 	color: white;
 	margin: 1em;
+}
+
+/* new post */
+
+#new-post-container{
+	background-color: #006064;
+	display: block;
+}
+
+#image-drop-box{
+	min-width: 200px;
+	min-height: 200px;
+	width: 30vw;
+	height: 30vw;
+	border: 1px solid white;
+	border-radius: 10px;
+	margin: auto;
 }

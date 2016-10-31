@@ -34,7 +34,7 @@
 /******/ 	__webpack_require__.c = installedModules;
 
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "";
+/******/ 	__webpack_require__.p = "/Users/kxu/Desktop/midnightCOM/midnightapplepie.com";
 
 /******/ 	// Load entry module and return exports
 /******/ 	return __webpack_require__(0);
@@ -73,31 +73,35 @@
 
 	var _app2 = _interopRequireDefault(_app);
 
-	var _path = __webpack_require__(15);
+	var _path = __webpack_require__(17);
 
 	var _path2 = _interopRequireDefault(_path);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	// import createLocation from 'history/lib/createLocation';
 	var server = (0, _express2.default)();
 
 	server.use(_express2.default.static(_path2.default.resolve(__dirname + '/../assets')));
 	server.use(_express2.default.static(_path2.default.resolve(__dirname + '/../built')));
 	server.use(_express2.default.static(_path2.default.resolve(__dirname + '/../style')));
 
+	var cssUrl = _path2.default.resolve(__dirname + "/style/style.css");
+	var builtUrl = _path2.default.resolve(__dirname + "/built/built.js");
+
+	console.log(cssUrl);
+	console.log(builtUrl);
+
 	function layout(html, preloadedState) {
-	  var mainCss = '<link rel="stylesheet" href="./style/style.css">';
+	  var mainCss = '<link rel="stylesheet" href="from server-' + cssUrl + '">';
 	  var bootStrap = '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">';
-	  var reactScript = '<script src="./built/built.js"></script>';
+	  var reactScript = '<script src=' + builtUrl + '></script>';
 
 	  return '\n    <!DOCTYPE html>\n    <html>\n        <head>\n          ' + mainCss + '\n        ' + bootStrap + '\n        </head>\n      <body>\n          <div class="app-container">' + html + '</div>\n          ' + reactScript + '\n        </body>\n    </html>';
 	}
 
-	server.get("*", function (req, res) {
+	function reactServerRender(req, res) {
 	  // Note that req.url here should be the full URL path from
 	  // the original request, including the query string.
-
 	  (0, _reactRouter.match)({ routes: _routes2.default, location: req.url }, function (error, redirectLocation, renderProps) {
 	    if (error) {
 	      res.status(500).send(error.message);
@@ -113,6 +117,22 @@
 	      res.status(404).send('Not found');
 	    }
 	  });
+	}
+
+	server.get("/", function (req, res) {
+	  reactServerRender(req, res);
+	});
+
+	server.get("/resume", function (req, res) {
+	  reactServerRender(req, res);
+	});
+
+	server.get("/new-post", function (req, res) {
+	  reactServerRender(req, res);
+	});
+
+	server.post("/add-image", function (req, res) {
+	  console.log(req);
 	});
 
 	var PORT = process.env.PORT || 8000;
@@ -173,14 +193,20 @@
 
 	var _resume2 = _interopRequireDefault(_resume);
 
+	var _new_post = __webpack_require__(15);
+
+	var _new_post2 = _interopRequireDefault(_new_post);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+	// import 'babel-register';
 	exports.default = _react2.default.createElement(
 		_reactRouter.Route,
 		{ path: '/', component: _app2.default },
 		_react2.default.createElement(_reactRouter.IndexRoute, { component: _home2.default }),
-		_react2.default.createElement(_reactRouter.Route, { path: 'resume', component: _resume2.default })
-	); // import 'babel-register';
+		_react2.default.createElement(_reactRouter.Route, { path: 'resume', component: _resume2.default }),
+		_react2.default.createElement(_reactRouter.Route, { path: 'new-post', component: _new_post2.default })
+	);
 
 /***/ },
 /* 7 */
@@ -467,7 +493,7 @@
 						{
 							className: 'btn',
 							to: '/resume' },
-						'resume'
+						'Resume'
 					),
 					_react2.default.createElement(
 						'a',
@@ -475,6 +501,13 @@
 							className: 'btn',
 							href: 'https://www.linkedin.com/in/kevxjia', target: '_blank' },
 						'LinkedIn'
+					),
+					_react2.default.createElement(
+						_reactRouter.Link,
+						{
+							className: 'btn',
+							to: 'new-post' },
+						'New Post'
 					)
 				);
 			}
@@ -535,17 +568,17 @@
 						_react2.default.createElement(
 							"div",
 							{ className: "blog-preview-item" },
-							_react2.default.createElement("img", { src: "./assets/sam_1.jpg" })
+							_react2.default.createElement("img", { src: "" })
 						),
 						_react2.default.createElement(
 							"div",
 							{ className: "blog-preview-item" },
-							_react2.default.createElement("img", { src: "./assets/sam_2.jpg" })
+							_react2.default.createElement("img", { src: "" })
 						),
 						_react2.default.createElement(
 							"div",
 							{ className: "blog-preview-item" },
-							_react2.default.createElement("img", { src: "./assets/sam_3.jpg" })
+							_react2.default.createElement("img", { src: "" })
 						)
 					),
 					_react2.default.createElement(
@@ -614,9 +647,10 @@
 					_react2.default.createElement(
 						"div",
 						{ className: "project-item-container" },
-						_react2.default.createElement("a", { className: "project-item", id: "pj-1", target: "_blank", href: "http://www.xiaoloong.com/" }),
-						_react2.default.createElement("a", { className: "project-item", id: "pj-2", target: "_blank", href: "https://mid9blog.herokuapp.com/" }),
-						_react2.default.createElement("a", { className: "project-item", id: "pj-3", target: "_blank", href: "http://midnightapplepie.github.io/projects/canvas.html" })
+						_react2.default.createElement("a", { className: "project-item", id: "pj-1", target: "_blank", href: "http://www.slackershub.club/" }),
+						_react2.default.createElement("a", { className: "project-item", id: "pj-2", target: "_blank", href: "http://www.xiaoloong.com/" }),
+						_react2.default.createElement("a", { className: "project-item", id: "pj-3", target: "_blank", href: "https://mid9blog.herokuapp.com/" }),
+						_react2.default.createElement("a", { className: "project-item", id: "pj-4", target: "_blank", href: "http://midnightapplepie.github.io/projects/canvas.html" })
 					)
 				);
 			}
@@ -692,6 +726,116 @@
 
 /***/ },
 /* 15 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	var _react = __webpack_require__(3);
+
+	var _react2 = _interopRequireDefault(_react);
+
+	var _topNav = __webpack_require__(11);
+
+	var _topNav2 = _interopRequireDefault(_topNav);
+
+	var _axios = __webpack_require__(16);
+
+	var _axios2 = _interopRequireDefault(_axios);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var newpostcontainer = {
+		backgroundColor: '#006064',
+		display: 'block'
+	};
+
+	var imagedropbox = {
+		minWidth: '200px',
+		minGeight: '200px',
+		width: '30vw',
+		height: '30vw',
+		border: '1px solid white',
+		borderradius: '10px',
+		margin: 'auto'
+	};
+
+	var NewPost = function (_Component) {
+		_inherits(NewPost, _Component);
+
+		function NewPost() {
+			_classCallCheck(this, NewPost);
+
+			return _possibleConstructorReturn(this, (NewPost.__proto__ || Object.getPrototypeOf(NewPost)).apply(this, arguments));
+		}
+
+		_createClass(NewPost, [{
+			key: 'componentDidMount',
+			value: function componentDidMount() {
+				console.log("mounted");
+				function preventLoadingFile(e) {
+					if (e.target != document.querySelector("#imagedropbox")) e.preventDefault();
+				}
+				window.addEventListener("dragover", preventLoadingFile, false);
+				window.addEventListener("drop", preventLoadingFile, false);
+			}
+		}, {
+			key: 'handleFileDrops',
+			value: function handleFileDrops(e) {
+				e.preventDefault();
+				console.log(e);
+				var file = e.dataTransfer.files[0];
+
+				_axios2.default.put("/add-image", file).then(function (result) {
+					debugger;
+					alert(result);
+				});
+			}
+		}, {
+			key: 'render',
+			value: function render() {
+				return _react2.default.createElement(
+					'div',
+					{ id: 'new-post-container',
+						style: newpostcontainer
+					},
+					_react2.default.createElement(_topNav2.default, null),
+					_react2.default.createElement('div', { id: 'image-drop-box',
+						style: imagedropbox,
+						onDrop: this.handleFileDrops }),
+					_react2.default.createElement(
+						'button',
+						{ className: 'btn' },
+						'Upload'
+					)
+				);
+			}
+		}]);
+
+		return NewPost;
+	}(_react.Component);
+
+	exports.default = NewPost;
+
+/***/ },
+/* 16 */
+/***/ function(module, exports) {
+
+	module.exports = require("axios");
+
+/***/ },
+/* 17 */
 /***/ function(module, exports) {
 
 	module.exports = require("path");

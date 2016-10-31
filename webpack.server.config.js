@@ -9,8 +9,8 @@ module.exports = {
 	]
 	,
 	output:{
-		path: __dirname + "/built",
-		// publicPath: __dirname + "/built",
+		path: path.resolve(__dirname + "/built"),
+		publicPath: path.resolve(__dirname),
 		filename: 'server.js'
 	},
 	module: {

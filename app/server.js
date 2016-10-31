@@ -13,10 +13,16 @@ server.use(express.static(path.resolve(__dirname + '/../assets')));
 server.use(express.static(path.resolve(__dirname + '/../built')));
 server.use(express.static(path.resolve(__dirname + '/../style')));
 
+var cssUrl = path.resolve(__dirname + "/style/style.css");
+var builtUrl = path.resolve(__dirname + "/built/built.js");
+
+console.log(cssUrl);
+console.log(builtUrl);
+
 function layout(html, preloadedState){
-  var mainCss =  `<link rel="stylesheet" href="./style/style.css">`;
+  var mainCss =  `<link rel="stylesheet" href="from server-${cssUrl}">`;
   var bootStrap = `<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">`;
-  var reactScript = `<script src="./built/built.js"></script>`
+  var reactScript = `<script src=${builtUrl}></script>`
   
   return `
     <!DOCTYPE html>
@@ -32,12 +38,9 @@ function layout(html, preloadedState){
     </html>`
 }
 
-
-
-server.get("*",(req, res) => {
-  // Note that req.url here should be the full URL path from
+function reactServerRender(req,res){
+    // Note that req.url here should be the full URL path from
   // the original request, including the query string.
-  
   match({ routes, location: req.url }, (error, redirectLocation, renderProps) => {
     if (error) {
       res.status(500).send(error.message)
@@ -53,8 +56,26 @@ server.get("*",(req, res) => {
     } else {
       res.status(404).send('Not found')
     }
-  })
-})
+  });
+}
+
+
+server.get("/",(req, res) => {
+  reactServerRender(req,res);
+});
+
+server.get("/resume",(req, res) => {
+  reactServerRender(req,res);
+});
+
+server.get("/new-post",(req, res) => {
+  reactServerRender(req,res);
+});
+
+server.post("/add-image",function(req,res){
+  console.log(req);
+});
+
 
 var PORT = process.env.PORT || 8000
 server.listen(PORT,function(){

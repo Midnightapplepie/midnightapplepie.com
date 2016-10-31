@@ -8,15 +8,17 @@
     "start": "npm run build && node built/server.js",
     "start:dev": "node app",
     "build": "npm run build:client && npm run build:server",
-    "build:server" : "webpack --config webpack.server.config.js",
-    "build:client" : "webpack --config webpack.config.js"
+    "build:server": "webpack --config webpack.server.config.js",
+    "build:client": "webpack --config webpack.config.js"
   },
   "author": "Kevin Xu",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.14.0",
+    "bluebird": "^3.4.6",
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
+    "lodash": "^4.16.2",
     "mongodb": "^2.2.9",
     "react": "^15.3.1",
     "react-dom": "^15.3.1",
