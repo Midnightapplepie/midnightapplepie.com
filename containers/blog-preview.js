@@ -7,13 +7,13 @@ class BlogPreview extends Component{
 				<h1 className="section-title">What Happened...</h1>
 				<div className="blog-preview-item-container">
 					<div className="blog-preview-item">
-						<img src="../assets/blog_images/sam_1" />
+						<img src="../assets/blog_images/sam_1.jpg" />
 					</div>
 					<div className="blog-preview-item">
-						<img src="../assets/blog_images/sam_2" />
+						<img src="../assets/blog_images/sam_2.jpg" />
 					</div>
 					<div className="blog-preview-item">
-						<img src="../assets/blog_images/sam_3" />
+						<img src="../assets/blog_images/sam_3.jpg" />
 					</div>
 				</div>
 				<div className="row">
