@@ -19,11 +19,11 @@ class Me extends Component {
 				        <div id="face-container">
 				            <div id="glasses">
 				                <div id="left-eye">
-				                    &#8226;
+				                    &bull;
 				                </div>
 				                <div id="bridge"></div>
 				                <div id="right-eye">
-				                    &#8226;
+				                    &bull;
 				                </div>
 				            </div>
 				            <div id="mouth"></div>
