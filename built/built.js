@@ -23851,6 +23851,19 @@
 
 	"use strict";
 
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	var initialState = { posts: [] };
+
+	var Posts = function Posts() {
+		var state = arguments.length <= 0 || arguments[0] === undefined ? initialState : arguments[0];
+
+		return state;
+	};
+
+	exports.default = Posts;
+
 /***/ },
 /* 205 */
 /***/ function(module, exports, __webpack_require__) {
