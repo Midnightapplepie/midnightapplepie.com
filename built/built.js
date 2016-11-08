@@ -29503,9 +29503,9 @@
 
 	var _banner2 = _interopRequireDefault(_banner);
 
-	var _blogPreview = __webpack_require__(271);
+	var _me = __webpack_require__(271);
 
-	var _blogPreview2 = _interopRequireDefault(_blogPreview);
+	var _me2 = _interopRequireDefault(_me);
 
 	var _projects = __webpack_require__(272);
 
@@ -29518,6 +29518,8 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	// import BlogPreview from './blog-preview';
+
 
 	var Home = function (_Component) {
 		_inherits(Home, _Component);
@@ -29535,7 +29537,7 @@
 					'div',
 					null,
 					_react2.default.createElement(_banner2.default, null),
-					_react2.default.createElement(_blogPreview2.default, null),
+					_react2.default.createElement(_me2.default, null),
 					_react2.default.createElement(_projects2.default, null)
 				);
 			}
@@ -29738,7 +29740,7 @@
 /* 271 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -29750,6 +29752,8 @@
 
 	var _react2 = _interopRequireDefault(_react);
 
+	var _reactRedux = __webpack_require__(173);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -29758,63 +29762,102 @@
 
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-	var BlogPreview = function (_Component) {
-		_inherits(BlogPreview, _Component);
+	var Me = function (_Component) {
+		_inherits(Me, _Component);
 
-		function BlogPreview() {
-			_classCallCheck(this, BlogPreview);
+		function Me() {
+			_classCallCheck(this, Me);
 
-			return _possibleConstructorReturn(this, (BlogPreview.__proto__ || Object.getPrototypeOf(BlogPreview)).apply(this, arguments));
+			return _possibleConstructorReturn(this, (Me.__proto__ || Object.getPrototypeOf(Me)).apply(this, arguments));
 		}
 
-		_createClass(BlogPreview, [{
-			key: "render",
+		_createClass(Me, [{
+			key: 'render',
 			value: function render() {
 				return _react2.default.createElement(
-					"div",
-					{ className: "blog-preview-container" },
+					'div',
+					null,
 					_react2.default.createElement(
-						"h1",
-						{ className: "section-title" },
-						"What Happened..."
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "blog-preview-item-container" },
+						'div',
+						{ id: 'me-container' },
 						_react2.default.createElement(
-							"div",
-							{ className: "blog-preview-item" },
-							_react2.default.createElement("img", { src: "../assets/blog_images/sam_1" })
+							'div',
+							{ id: 'head-container' },
+							_react2.default.createElement(
+								'div',
+								{ id: 'hair-container' },
+								_react2.default.createElement('div', { id: 'hair-1' }),
+								_react2.default.createElement('div', { id: 'hair-2' }),
+								_react2.default.createElement('div', { id: 'hair-3' })
+							),
+							_react2.default.createElement(
+								'div',
+								{ id: 'face-container' },
+								_react2.default.createElement(
+									'div',
+									{ id: 'glasses' },
+									_react2.default.createElement(
+										'div',
+										{ id: 'left-eye' },
+										'•'
+									),
+									_react2.default.createElement('div', { id: 'bridge' }),
+									_react2.default.createElement(
+										'div',
+										{ id: 'right-eye' },
+										'•'
+									)
+								),
+								_react2.default.createElement('div', { id: 'mouth' })
+							)
 						),
 						_react2.default.createElement(
-							"div",
-							{ className: "blog-preview-item" },
-							_react2.default.createElement("img", { src: "../assets/blog_images/sam_2" })
+							'div',
+							{ id: 'upper-body-container' },
+							_react2.default.createElement(
+								'div',
+								{ id: 'left-arm-container' },
+								_react2.default.createElement('div', { id: 'left-arm' }),
+								_react2.default.createElement('div', { id: 'left-hand' })
+							),
+							_react2.default.createElement('div', { id: 'my-body' }),
+							_react2.default.createElement(
+								'div',
+								{ id: 'right-arm-container' },
+								_react2.default.createElement('div', { id: 'right-arm' }),
+								_react2.default.createElement(
+									'div',
+									{ id: 'right-hand' },
+									_react2.default.createElement('div', { id: 'right-thumb' })
+								)
+							)
 						),
 						_react2.default.createElement(
-							"div",
-							{ className: "blog-preview-item" },
-							_react2.default.createElement("img", { src: "../assets/blog_images/sam_3" })
+							'div',
+							{ id: 'lower-body-container' },
+							_react2.default.createElement('div', { id: 'hip' }),
+							_react2.default.createElement(
+								'div',
+								{ id: 'left-leg-container' },
+								_react2.default.createElement('div', { id: 'left-leg' }),
+								_react2.default.createElement('div', { id: 'left-feet' })
+							),
+							_react2.default.createElement(
+								'div',
+								{ id: 'right-leg-container' },
+								_react2.default.createElement('div', { id: 'right-leg' }),
+								_react2.default.createElement('div', { id: 'right-feet' })
+							)
 						)
-					),
-					_react2.default.createElement(
-						"div",
-						{ className: "row" },
-						_react2.default.createElement(
-							"button",
-							{ className: "btn" },
-							" Under Construction ... "
-						)
-					),
-					_react2.default.createElement("div", { className: "blog-preview-bottom-border" })
+					)
 				);
 			}
 		}]);
 
-		return BlogPreview;
+		return Me;
 	}(_react.Component);
 
-	exports.default = BlogPreview;
+	exports.default = Me;
 
 /***/ },
 /* 272 */

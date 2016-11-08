@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import Banner from './banner';
-import BlogPreview from './blog-preview';
+// import BlogPreview from './blog-preview';
+import Me from './me';
 import Projects from './projects';
 
 class Home extends Component {
@@ -10,7 +11,7 @@ class Home extends Component {
 		return (
 			<div>
 				<Banner />
-				<BlogPreview />
+				<Me />
 				<Projects />
 			</div>
 		);
