@@ -5,6 +5,9 @@ class Me extends Component {
 	componentDidMount(){
 		document.querySelector("#right-arm-container").className = "arm-90";
     	document.querySelector("#right-thumb").className = "thumb-up";
+    	document.querySelector("#left-eye").innerHTML = '&bullet;'
+    	document.querySelector("#right-eye").innerHTML = '&bullet;'
+
 	}
 	render(){
 		return (
@@ -19,11 +22,11 @@ class Me extends Component {
 				        <div id="face-container">
 				            <div id="glasses">
 				                <div id="left-eye">
-				                    &bull;
+
 				                </div>
 				                <div id="bridge"></div>
 				                <div id="right-eye">
-				                    &bull;
+	
 				                </div>
 				            </div>
 				            <div id="mouth"></div>
